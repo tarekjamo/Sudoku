@@ -24,22 +24,25 @@ public class SudokuValidity {
 
     public static boolean isComplete(int[][] grid)
     {
-        if(nextEmptyCase(grid)==-1)
+        if(nextEmptyCase(grid).i==-1)
         {
             return true ;
         }
         return  false ;
     }
-    public static  int nextEmptyCase(int[][] grid)
+    public static Indexes nextEmptyCase(int[][] grid)
     {
+        Indexes indexes = new Indexes() ;
         for(int j = 0 ; j < grid.length ; j++){
             for(int i = 0 ; i < grid.length ;i++){
                 if(grid[j][i]==0) {
-                    return j*10 + i ;
+                    indexes.j = j ;
+                    indexes.i = i ;
+
                 }
             }
         }
-        return  -1 ;
+        return  indexes ;
     }
 
 

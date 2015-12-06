@@ -38,9 +38,9 @@ public class Sudoku {
             return  false ;
         }
 
-        int firstEmptyCase = SudokuValidity.nextEmptyCase(grid);
-        int iEmptyCase = firstEmptyCase % 10;
-        int jEmptyCase = firstEmptyCase / 10;
+        Indexes firstEmptyCase = SudokuValidity.nextEmptyCase(grid);
+        int iEmptyCase = firstEmptyCase.i ;
+        int jEmptyCase = firstEmptyCase.j ;
 
         Set<Integer> allPossibilities = getAllPossibilities(jEmptyCase, iEmptyCase);
         if(allPossibilities.size()==0)
